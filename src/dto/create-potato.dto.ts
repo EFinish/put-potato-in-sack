@@ -1,7 +1,13 @@
+import {IsNotEmpty, IsNumber } from 'class-validator';
 
 export class CreatePotatoDto {
-    name: string;
-    color: string;
-    weight: number;
-  }
+  @IsNotEmpty()
+  name: string;
+
+  @IsNotEmpty()
+  color: string;
+
+  @IsNumber()
+  weight: number;
+}
   

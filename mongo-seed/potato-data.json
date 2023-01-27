@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Olaf",
+        "color": "brown",
+        "weight": 300
+    },
+    {
+        "name": "Bart",
+        "color": "brown",
+        "weight": 500
+    },
+    {
+        "name": "Pepsi",
+        "color": "purple",
+        "weight": 100
+    }
+]

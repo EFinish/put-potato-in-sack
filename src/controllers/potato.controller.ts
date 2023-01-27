@@ -7,7 +7,6 @@ import { PotatoService } from '../services/potato.service';
 @Controller('potato')
 export class PotatoController {
 constructor(private readonly potatoService: PotatoService) {}
-
   @Get()
   findAll(@Res() res: Response){
     const result = this.potatoService.findAll()
@@ -24,9 +23,9 @@ constructor(private readonly potatoService: PotatoService) {}
 
   @Post(':sack-id')
   putPotatoInSack(@Param('sack-id') id: string, @Res() res: Response) {
-    // const result = this.potatoService.putPotatoInSack()
+    const result = this.potatoService.putPotatoInSack()
 
-    // res.status(HttpStatus.OK).send();
+    res.status(HttpStatus.OK).send();
 
     // TODO
   }

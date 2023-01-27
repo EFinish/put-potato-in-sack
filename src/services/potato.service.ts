@@ -19,7 +19,7 @@ export class PotatoService {
     return this.potatoModel.find().exec();
   }
 
-  putPotatoInSack(): string {
-    return 'Hello World!';
+  async putPotatoInSack(): Promise<any> {
+    // TODO
   }
 }

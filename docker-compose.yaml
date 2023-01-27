@@ -2,8 +2,17 @@ version: "3.9"  # optional since v1.27.0
 services:
   mongo:
     image: mongo
+    # command: mongoimport --host mongo --db vegetable --collection potatoes --file ./data/potato-data.json --jsonArray
+      # - mongoimport --host mongo --db vegetable --collection sacks --file /data/sack-data.json --jsonArray
     ports: 
       - 27017:27017
+    networks:
+      - potato-local
+
+  mongo-seed:
+    build: ./mongo-seed
+    depends_on:
+      - mongo
     networks:
       - potato-local
 
@@ -19,10 +28,9 @@ services:
       - potato-local
     depends_on:
       - mongo
-
-
-volumes:
-  go-mod-cache:
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
 
 networks:
   potato-local:
