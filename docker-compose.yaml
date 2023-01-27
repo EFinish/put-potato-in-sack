@@ -1,0 +1,28 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  mongo:
+    image: mongo
+    ports: 
+      - 27017:27017
+    networks:
+      - potato-local
+
+  put-potato-in-sack:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9002:9002"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - potato-local
+    depends_on:
+      - mongo
+
+
+volumes:
+  go-mod-cache:
+
+networks:
+  potato-local:
