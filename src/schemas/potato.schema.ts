@@ -1,8 +1,10 @@
 
-import * as mongoose from 'mongoose';
+import { Schema } from 'mongoose';
 
-export const PotatoSchema = new mongoose.Schema({
+
+export const PotatoSchema = new Schema({
     name: String,
     color: String,
     weight: Number,
+    sack_id: { type: Schema.Types.ObjectId, ref: 'sacks' },
 });
