@@ -16,7 +16,7 @@ services:
 
   put-potato-in-sack:
     build:
-      context: .
+      context: ./api
       dockerfile: Dockerfile
     ports:
       - "9002:9002"
