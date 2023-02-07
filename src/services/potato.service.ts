@@ -16,7 +16,7 @@ export class PotatoService {
   }
 
   async findAll(): Promise<Potato[]> {
-    return this.potatoModel.find().exec();
+    return await this.potatoModel.find({}).exec();
   }
 
   async doesPotatoExist(potatoId: string): Promise<boolean> {

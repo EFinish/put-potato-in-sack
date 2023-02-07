@@ -10,8 +10,8 @@ import { PotatoService } from '../services/potato.service';
 export class PotatoController {
 constructor(private readonly potatoService: PotatoService, private readonly sackService: SackService) {}
   @Get()
-  findAll(@Res() res: Response){
-    const result = this.potatoService.findAll()
+  async findAll(@Res() res: Response){
+    const result = await this.potatoService.findAll()
 
     res.status(HttpStatus.OK).json(result);
   }
