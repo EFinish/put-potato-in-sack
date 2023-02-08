@@ -14,18 +14,30 @@ services:
     networks:
       - potato-local
 
-  put-potato-in-sack:
+  api:
     build:
-      context: ./api
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: api/Dockerfile
+    command: sh -c "cd ./api && npm run start:dev"
     ports:
       - "9002:9002"
-    environment:
-      - NODE_ENV=production
     networks:
       - potato-local
     depends_on:
       - mongo
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
+  fe:
+    build:
+      context: .
+      dockerfile: fe/Dockerfile
+    command: sh -c "cd ./fe && npm run dev"
+    ports:
+      - "5173:5173"
+    networks:
+      - potato-local
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules

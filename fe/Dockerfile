@@ -4,11 +4,11 @@ FROM node:latest
 WORKDIR /usr/src/app
 
 # Install app dependencies
-COPY api/package*.json ./
+COPY fe/package*.json ./
 RUN npm install
 
 # Bundle app source
-COPY api/ .
+COPY fe/ .
 
 # Build TypeScript
 RUN npm run build
