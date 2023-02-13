@@ -3,4 +3,5 @@ export type Potato = {
     name: string;
     color: string;
     weight: number;
+    sackId: string | null;
 };

@@ -9,19 +9,22 @@ function CreatePotatoes() {
             "id": "1",
             "name": "Olaf",
             "color": "brown",
-            "weight": 300
+            "weight": 300,
+            "sackId": "1",
         },
         {
             "id": "2",
             "name": "Bart",
             "color": "brown",
-            "weight": 500
+            "weight": 500,
+            "sackId": null,
         },
         {
             "id": "3",
             "name": "Pepsi",
             "color": "purple",
-            "weight": 100
+            "weight": 100,
+            "sackId": null,
         }
     ];
 
@@ -70,19 +73,22 @@ function CreateCarrots() {
             "id": "1",
             "name": "Kibe",
             "color": "brown",
-            "weight": 250
+            "weight": 250,
+            "sackId": "2",
         },
         {
             "id": "2",
             "name": "Kurt",
             "color": "brown",
-            "weight": 30
+            "weight": 30,
+            "sackId": null,
         },
         {
             "id": "3",
             "name": "Tina",
             "color": "purple",
-            "weight": 35
+            "weight": 35,
+            "sackId": null,
         }
     ];
 
