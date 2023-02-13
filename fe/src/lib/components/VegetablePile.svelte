@@ -1,16 +1,32 @@
 <script lang="ts">
+	import type { Carrot } from '$lib/models/carrot';
 	import type { Potato } from '$lib/models/potato';
-	export let potatoes: Potato[] = [];
+	import PotatoCard from './PotatoCard.svelte';
+	import CarrotCard from './CarrotCard.svelte';
 
-	import potatoImage from "$lib/assets/images/potato.png"
+	export let potatoes: Potato[] = [];
+	export let carrots: Carrot[] = [];
 </script>
 
-<h1>Vegetable Pile!</h1>
+<div>
+	<h1>Vegetable Pile!</h1>
 
-{#each potatoes as potato (potato.id)}
-	<div>
-		<img alt="a potato" src={potatoImage} >
-		<div>{potato.name}</div>
-		<div>{potato.weight}</div>
+	<div class="vegetable-table">
+		{#each potatoes as potato (potato.id)}
+			<PotatoCard {potato} />
+		{/each}
 	</div>
-{/each}
+	<div class="vegetable-table">
+		{#each carrots as carrot (carrot.id)}
+			<CarrotCard {carrot} />
+		{/each}
+	</div>
+</div>
+
+<style>
+	.vegetable-table {
+		display: flex;
+		flex-wrap: wrap;
+		text-align: center;
+	}
+</style>
